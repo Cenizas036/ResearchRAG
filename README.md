@@ -6,6 +6,8 @@
 
 > **Fusion: LLM + Information Retrieval + Vector Databases**
 
+🚀 **[Live Demo on Vercel](https://frontend-self-omega-43.vercel.app)**
+
 ![ResearchRAG Interface](docs/screenshot.png)
 
 A production-grade RAG pipeline for academic research, featuring document ingestion (PDF, ArXiv, web), hybrid search (dense + sparse vectors), citation tracking, multi-hop reasoning, and hallucination detection.
