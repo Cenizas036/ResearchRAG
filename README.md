@@ -6,11 +6,24 @@
 
 > **Fusion: LLM + Information Retrieval + Vector Databases**
 
-🚀 **[Live Demo on Vercel](https://frontend-self-omega-43.vercel.app)**
+🚀 **[Live Demo on Vercel](https://researchrag-three.vercel.app/)**
 
 ![ResearchRAG Interface](docs/screenshot.png)
 
-A production-grade RAG pipeline for academic research, featuring document ingestion (PDF, ArXiv, web), hybrid search (dense + sparse vectors), citation tracking, multi-hop reasoning, and hallucination detection.
+A production-grade AI-powered Research Assistant web application featuring a stunning atmospheric design, real-time AI capabilities, and interactive UX. 
+
+## 🌐 Architecture Details
+
+### Frontend (Vercel)
+- **Framework**: HTML, CSS, Vanilla JS, Vite.
+- **Styling**: Custom modern atmospheric design system with glassmorphism, dynamic scrolling effects, scroll-spy navigation, and micro-animations.
+- **Hosting**: Deployed seamlessly on Vercel.
+
+### Backend (Hugging Face Spaces)
+- **Framework**: FastAPI (Python).
+- **AI Integration**: Uses the Hugging Face Free Inference API async client.
+- **Model**: `Qwen/Qwen2.5-72B-Instruct` for highly accurate and contextual research answers.
+- **Hosting**: Deployed on Hugging Face Spaces for highly available serverless compute.
 
 ## ✨ Features
 
@@ -32,29 +45,19 @@ python -m src.main query "What are the latest advances in RLHF?"
 
 ## 📦 Structure
 
-```
+```text
 ResearchRAG/
-├── src/
-│   ├── main.py
-│   ├── ingestion/
-│   │   ├── pdf_parser.py
-│   │   ├── arxiv_fetcher.py
-│   │   └── chunker.py
-│   ├── embeddings/
-│   │   ├── embedding_engine.py
-│   │   └── hybrid_search.py
-│   ├── vectorstore/
-│   │   ├── chroma_store.py
-│   │   └── faiss_store.py
-│   ├── retrieval/
-│   │   ├── retriever.py
-│   │   └── reranker.py
-│   ├── generation/
-│   │   ├── generator.py
-│   │   └── hallucination_detector.py
-│   └── memory/
-│       └── conversation.py
-├── config/
-├── requirements.txt
-└── LICENSE
+├── frontend/
+│   ├── index.html        # Main atmospheric landing page
+│   ├── src/
+│   │   ├── main.js       # App logic and API integration
+│   │   └── style.css     # Modern design system
+│   ├── public/
+│   ├── package.json
+│   └── vercel.json
+├── api/
+│   ├── index.py          # FastAPI backend logic
+│   └── requirements.txt  # Python dependencies
+├── deploy_hf.py          # Hugging Face deployment script
+└── README.md
 ```

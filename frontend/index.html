@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Superdesign — A vibe-centric design system with glassmorphism, fluid typography, and atmospheric dark interfaces." />
-    <title>Superdesign — Modern Atmospheric Design System</title>
+    <meta name="description" content="ResearchRAG — AI-powered Retrieval-Augmented Generation research assistant with hybrid search, citation tracking, and multi-hop reasoning." />
+    <title>ResearchRAG — AI Research Assistant</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2'><polygon points='12 2 2 22 22 22'/></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +16,8 @@
     <nav class="main-nav" id="main-nav">
       <div class="nav-container">
         <a href="#" class="nav-logo">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><polygon points="12 2 2 22 22 22"></polygon></svg>
-          <span class="logo-text">superdesign</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"></path></svg>
+          <span class="logo-text">ResearchRAG</span>
         </a>
         <div class="nav-links pill-container">
           <a href="#features">Features</a>
@@ -25,7 +25,6 @@
           <a href="#faq">FAQ</a>
         </div>
         <div class="nav-cta">
-          <button class="primary-btn" id="get-started-btn">Get Started</button>
         </div>
       </div>
     </nav>
@@ -44,9 +43,9 @@
         <div class="badge">
           <span class="badge-dot"></span>
           <span class="badge-text">New</span>
-          <span class="badge-label">Introducing Vibe 2.0</span>
+          <span class="badge-label">Hybrid RAG Pipeline v2.0</span>
         </div>
-        <h1 class="hero-title">Design at the<br>speed of thought.</h1>
+        <h1 class="hero-title">Research at the<br>speed of thought.</h1>
         <p class="hero-subtitle">
           <span id="typing-text"></span><span class="typing-cursor"></span>
         </p>
@@ -55,7 +54,7 @@
         <div class="vibe-input-wrapper" id="vibe-input">
           <div class="vibe-input-glow"></div>
           <div class="vibe-input-container">
-            <textarea id="vibe-textarea" placeholder="Describe what you want to build..." rows="2"></textarea>
+            <textarea id="vibe-textarea" placeholder="Ask a research question..." rows="2"></textarea>
             <div class="vibe-input-actions">
               <div class="vibe-input-left">
                 <button class="icon-btn attachment-btn" id="attach-btn" aria-label="Attach file">
@@ -71,12 +70,16 @@
             </div>
           </div>
         </div>
+
+        <!-- Chat Response Container -->
+        <div id="chat-response-container" class="chat-response-container" style="display: none; margin-top: 2rem; width: 100%; max-width: 800px; text-align: left; position: relative; z-index: 20;">
+        </div>
       </div>
 
       <!-- Integration Bar -->
       <div class="integration-bar">
         <div class="integration-left">
-          <span class="integration-label">Frameworks</span>
+          <span class="integration-label">Powered By</span>
           <div class="integration-logos">
             <div class="fw-icon" title="React">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="2.5"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>
@@ -94,11 +97,11 @@
         </div>
         <div class="integration-divider"></div>
         <div class="integration-right">
-          <span class="integration-label">Integrations</span>
+          <span class="integration-label">Data Sources</span>
           <div class="marquee-container">
             <div class="marquee-content">
-              <span>Stripe</span><span>Supabase</span><span>Vercel</span><span>PostHog</span><span>OpenAI</span><span>GitHub</span><span>Resend</span><span>Clerk</span>
-              <span>Stripe</span><span>Supabase</span><span>Vercel</span><span>PostHog</span><span>OpenAI</span><span>GitHub</span><span>Resend</span><span>Clerk</span>
+              <span>ArXiv</span><span>PubMed</span><span>Qwen 2.5</span><span>ChromaDB</span><span>FAISS</span><span>Pinecone</span><span>PDF</span><span>DOI</span>
+              <span>ArXiv</span><span>PubMed</span><span>Qwen 2.5</span><span>ChromaDB</span><span>FAISS</span><span>Pinecone</span><span>PDF</span><span>DOI</span>
             </div>
           </div>
         </div>
@@ -111,10 +114,10 @@
         <nav class="sticky-feature-nav" id="scroll-spy-nav">
           <div class="active-indicator" id="active-indicator"></div>
           <ul>
-            <li><a href="#feature-1" class="spy-link active" data-index="0">Responsive Grid</a></li>
-            <li><a href="#feature-2" class="spy-link" data-index="1">Glass Panels</a></li>
-            <li><a href="#feature-3" class="spy-link" data-index="2">Dynamic Typing</a></li>
-            <li><a href="#feature-4" class="spy-link" data-index="3">Token System</a></li>
+            <li><a href="#feature-1" class="spy-link active" data-index="0">Hybrid Search</a></li>
+            <li><a href="#feature-2" class="spy-link" data-index="1">Smart Retrieval</a></li>
+            <li><a href="#feature-3" class="spy-link" data-index="2">Citation Tracking</a></li>
+            <li><a href="#feature-4" class="spy-link" data-index="3">Multi-hop Reasoning</a></li>
           </ul>
         </nav>
       </div>
@@ -122,9 +125,9 @@
 
         <article id="feature-1" class="feature-block">
           <div class="feature-text">
-            <span class="feature-tag">Layout</span>
-            <h3>Responsive Grid</h3>
-            <p>Our layouts naturally adapt to any device format using a fluid grid system rooted in fundamental mathematical proportions. From 320px mobile screens to 4K displays, every element snaps into place.</p>
+            <span class="feature-tag">Search</span>
+            <h3>Hybrid Search</h3>
+            <p>Combines dense vector embeddings (Qwen 2.5 72B / sentence-transformers) with BM25 sparse retrieval for best-in-class recall. Query across thousands of research papers in milliseconds.</p>
           </div>
           <div class="feature-visual">
             <div class="grid-demo">
@@ -137,27 +140,27 @@
 
         <article id="feature-2" class="feature-block reverse">
           <div class="feature-text">
-            <span class="feature-tag">Visual</span>
-            <h3>Glass Panels</h3>
-            <p>Utilizing high-performance CSS backdrop filters to create depth and spatial hierarchy without sacrificing render performance. Built for modern browsers with graceful degradation.</p>
+            <span class="feature-tag">Retrieval</span>
+            <h3>Smart Retrieval</h3>
+            <p>AI-powered re-ranking with cross-encoder models ensures the most relevant chunks surface first. Supports ChromaDB, FAISS, and Pinecone vector stores out of the box.</p>
           </div>
           <div class="feature-visual dark-visual">
             <div class="code-block">
               <div class="code-dots"><span></span><span></span><span></span></div>
-              <pre><code><span class="code-selector">.glass</span> {
-  <span class="code-prop">background</span>: <span class="code-val">rgba(255, 255, 255, 0.05)</span>;
-  <span class="code-prop">backdrop-filter</span>: <span class="code-val">blur(12px)</span>;
-  <span class="code-prop">border</span>: <span class="code-val">1px solid rgba(255, 255, 255, 0.1)</span>;
-}</code></pre>
+              <pre><code><span class="code-selector">retriever</span> = <span class="code-val">HybridRetriever</span>(
+  <span class="code-prop">model</span>: <span class="code-val">Qwen2.5-72B-Instruct</span>,
+  <span class="code-prop">sparse</span>: <span class="code-val">BM25(k1=1.5)</span>,
+  <span class="code-prop">reranker</span>: <span class="code-val">CrossEncoder("ms-marco")</span>
+)</code></pre>
             </div>
           </div>
         </article>
 
         <article id="feature-3" class="feature-block">
           <div class="feature-text">
-            <span class="feature-tag">Interaction</span>
-            <h3>Dynamic Typing</h3>
-            <p>Bring your interfaces to life with interactive components that react to user states naturally. Every micro-animation is GPU-accelerated and respects prefers-reduced-motion.</p>
+            <span class="feature-tag">Citations</span>
+            <h3>Citation Tracking</h3>
+            <p>Every answer is grounded in source documents. Auto-generates citations with page numbers, DOI links, and confidence scores so you can verify every claim.</p>
           </div>
           <div class="feature-visual dark-visual">
             <div class="typing-demo">
@@ -170,16 +173,16 @@
 
         <article id="feature-4" class="feature-block reverse">
           <div class="feature-text">
-            <span class="feature-tag">System</span>
-            <h3>Token System</h3>
-            <p>A complete design token architecture with CSS custom properties. Colors, spacing, typography, and effects — all controlled from a single source of truth.</p>
+            <span class="feature-tag">Reasoning</span>
+            <h3>Multi-hop Reasoning</h3>
+            <p>Chain-of-thought reasoning with iterative retrieval. The system breaks complex questions into sub-queries, retrieves context for each, and synthesizes a comprehensive answer.</p>
           </div>
           <div class="feature-visual">
             <div class="token-demo">
-              <div class="token-row"><span class="token-swatch" style="background:#6366f1"></span><span class="token-name">--brand-indigo</span><span class="token-value">#6366f1</span></div>
-              <div class="token-row"><span class="token-swatch" style="background:#0f172a"></span><span class="token-name">--primary-dark</span><span class="token-value">#0f172a</span></div>
-              <div class="token-row"><span class="token-swatch" style="background:#f8f9fa"></span><span class="token-name">--surface-white</span><span class="token-value">#f8f9fa</span></div>
-              <div class="token-row"><span class="token-swatch" style="background:linear-gradient(135deg,#6366f1,#ec4899)"></span><span class="token-name">--gradient-glow</span><span class="token-value">indigo→pink</span></div>
+              <div class="token-row"><span class="token-swatch" style="background:#6366f1"></span><span class="token-name">Step 1</span><span class="token-value">Decompose query</span></div>
+              <div class="token-row"><span class="token-swatch" style="background:#8b5cf6"></span><span class="token-name">Step 2</span><span class="token-value">Retrieve per sub-query</span></div>
+              <div class="token-row"><span class="token-swatch" style="background:#a78bfa"></span><span class="token-name">Step 3</span><span class="token-value">Cross-reference chunks</span></div>
+              <div class="token-row"><span class="token-swatch" style="background:linear-gradient(135deg,#6366f1,#10b981)"></span><span class="token-name">Step 4</span><span class="token-value">Synthesize answer</span></div>
             </div>
           </div>
         </article>
@@ -192,12 +195,12 @@
       <div class="section-header dark">
         <span class="section-tag">Community</span>
         <h2>Wall of Love</h2>
-        <p>What our community is building.</p>
+        <p>What researchers are saying.</p>
       </div>
       <div class="masonry-grid">
         <div class="testimonial-card glass-strong">
           <div class="stars">★★★★★</div>
-          <p class="quote">"This design system changed how we think about our frontend. It feels incredibly premium right out of the box."</p>
+          <p class="quote">"ResearchRAG changed how we do literature reviews. We went from weeks of manual searching to instant, cited answers."</p>
           <div class="profile">
             <div class="avatar bg-gradient-1"></div>
             <div class="info"><span class="name">Sarah Jenkins</span><span class="handle">@sjenkins</span></div>
@@ -205,7 +208,7 @@
         </div>
         <div class="testimonial-card glass-strong tall">
           <div class="stars">★★★★★</div>
-          <p class="quote">"I spent hours trying to get the glassmorphism right. Superdesign nails it with perfect backdrop filters and borders. The token system makes theming a breeze."</p>
+          <p class="quote">"The hybrid search is incredible — it catches papers that keyword search misses entirely. The citation tracking saved us hours of manual verification."</p>
           <div class="profile">
             <div class="avatar bg-gradient-2"></div>
             <div class="info"><span class="name">Marcus Chen</span><span class="handle">@marcusc</span></div>
@@ -213,7 +216,7 @@
         </div>
         <div class="testimonial-card glass-strong">
           <div class="stars">★★★★★</div>
-          <p class="quote">"The vibe input box alone makes the whole package worth it. User engagement skyrocketed."</p>
+          <p class="quote">"The multi-hop reasoning is magic. It breaks down complex questions and gives you cited, verifiable answers."</p>
           <div class="profile">
             <div class="avatar bg-gradient-3"></div>
             <div class="info"><span class="name">Elena Rostova</span><span class="handle">@elenar</span></div>
@@ -221,7 +224,7 @@
         </div>
         <div class="testimonial-card glass-strong">
           <div class="stars">★★★★★</div>
-          <p class="quote">"Incredible attention to detail in the typography scales. Lora + Inter is a match made in heaven."</p>
+          <p class="quote">"Incredible attention to accuracy. The hallucination detector flags unsupported claims so we only trust verified information."</p>
           <div class="profile">
             <div class="avatar bg-gradient-4"></div>
             <div class="info"><span class="name">David Kim</span><span class="handle">@dkim_designs</span></div>
@@ -229,7 +232,7 @@
         </div>
         <div class="testimonial-card glass-strong tall">
           <div class="stars">★★★★★</div>
-          <p class="quote">"We migrated our entire SaaS frontend to Superdesign in a weekend. The scroll-spy navigation alone saved us days of custom work. Every component just works."</p>
+          <p class="quote">"We ingested 2,000 papers over a weekend using the ArXiv and PDF parsers. The vector search is blazing fast across the entire corpus. Every query just works."</p>
           <div class="profile">
             <div class="avatar bg-gradient-5"></div>
             <div class="info"><span class="name">Priya Nair</span><span class="handle">@priyan</span></div>
@@ -237,7 +240,7 @@
         </div>
         <div class="testimonial-card glass-strong">
           <div class="stars">★★★★★</div>
-          <p class="quote">"Finally, a design system that doesn't look like every other Tailwind template. This is art."</p>
+          <p class="quote">"Finally, a RAG system that doesn't hallucinate. The source grounding makes all the difference for academic work."</p>
           <div class="profile">
             <div class="avatar bg-gradient-6"></div>
             <div class="info"><span class="name">James Okafor</span><span class="handle">@jamesokafor</span></div>
@@ -257,38 +260,38 @@
         <div class="accordion" id="faq-accordion">
           <div class="accordion-item">
             <button class="accordion-trigger" id="faq-trigger-1" aria-expanded="false" aria-controls="faq-content-1">
-              <span>Is this compatible with Tailwind CSS?</span>
+              <span>What document formats are supported?</span>
               <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div class="accordion-content" id="faq-content-1" role="region" aria-labelledby="faq-trigger-1">
-              <div class="accordion-inner">We focus on vanilla CSS for maximum flexibility, but the design tokens can easily be exported to a tailwind.config.js file if you prefer that workflow.</div>
+              <div class="accordion-inner">ResearchRAG supports PDF documents, ArXiv papers (via ID or URL), web pages, and DOI lookups. The ingestion pipeline extracts text, splits it into semantic chunks, and indexes them for retrieval.</div>
             </div>
           </div>
           <div class="accordion-item">
             <button class="accordion-trigger" id="faq-trigger-2" aria-expanded="false" aria-controls="faq-content-2">
-              <span>Can I use this for commercial projects?</span>
+              <span>Which vector databases are supported?</span>
               <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div class="accordion-content" id="faq-content-2" role="region" aria-labelledby="faq-trigger-2">
-              <div class="accordion-inner">Absolutely. The license permits full commercial usage without any attribution requirements. Use it for client projects, SaaS products, and internal tools.</div>
+              <div class="accordion-inner">ResearchRAG supports ChromaDB for local development, FAISS for high-performance in-memory search, and Pinecone for scalable cloud-hosted vector storage. Switch between them with a single config change.</div>
             </div>
           </div>
           <div class="accordion-item">
             <button class="accordion-trigger" id="faq-trigger-3" aria-expanded="false" aria-controls="faq-content-3">
-              <span>How are the animations built?</span>
+              <span>How does hallucination detection work?</span>
               <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div class="accordion-content" id="faq-content-3" role="region" aria-labelledby="faq-trigger-3">
-              <div class="accordion-inner">All animations use CSS transitions and @keyframes for 60fps performance, with Vanilla JS orchestrating state changes. We respect the prefers-reduced-motion media query.</div>
+              <div class="accordion-inner">Every generated answer is cross-referenced against the retrieved source chunks. Claims that cannot be traced back to a specific document are flagged with a confidence warning, ensuring research integrity.</div>
             </div>
           </div>
           <div class="accordion-item">
             <button class="accordion-trigger" id="faq-trigger-4" aria-expanded="false" aria-controls="faq-content-4">
-              <span>What browsers are supported?</span>
+              <span>What AI model powers ResearchRAG?</span>
               <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div class="accordion-content" id="faq-content-4" role="region" aria-labelledby="faq-trigger-4">
-              <div class="accordion-inner">We support all modern evergreen browsers — Chrome, Firefox, Safari, and Edge. Glassmorphism effects degrade gracefully in older browsers with solid fallback backgrounds.</div>
+              <div class="accordion-inner">ResearchRAG is powered by Qwen 2.5 72B Instruct, a state-of-the-art open-source large language model hosted for free on Hugging Face. No paid API keys required — it's completely free to use.</div>
             </div>
           </div>
         </div>
@@ -300,10 +303,10 @@
       <div class="footer-container">
         <div class="footer-brand">
           <a href="#" class="nav-logo">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 22 22 22"></polygon></svg>
-            <span class="logo-text">superdesign</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"></path></svg>
+            <span class="logo-text">ResearchRAG</span>
           </a>
-          <p class="footer-tagline">Modern Atmospheric Design System.</p>
+          <p class="footer-tagline">AI-Powered Research Assistant.</p>
         </div>
         <div class="footer-links">
           <div class="footer-col">
@@ -327,7 +330,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Superdesign. All rights reserved.</span>
+        <span>&copy; 2026 ResearchRAG. All rights reserved.</span>
       </div>
     </footer>
 
